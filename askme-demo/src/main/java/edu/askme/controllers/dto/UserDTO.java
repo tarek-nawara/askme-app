@@ -1,5 +1,7 @@
 package edu.askme.controllers.dto;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -11,6 +13,10 @@ public class UserDTO {
 	@NotNull
 	@Size(min = 6, max = 30)
 	private String password;
+
+	@Email
+	@NotNull
+	private String email;
 
 	public String getUsername() {
 		return username;
@@ -28,7 +34,15 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	@Override
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("UserDTO [username=");

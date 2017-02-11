@@ -9,8 +9,10 @@ import edu.askme.controllers.exceptions.QuestionExistException;
 import edu.askme.controllers.exceptions.QuestionNotFoundException;
 import edu.askme.controllers.exceptions.UserExistException;
 import edu.askme.controllers.exceptions.UserNotFoundException;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @ControllerAdvice
+@ResponseBody
 public class GeneralControllerAdvisor {
 
 	@ExceptionHandler(UserNotFoundException.class)
